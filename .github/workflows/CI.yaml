@@ -1,0 +1,22 @@
+name: CI Workflow Practise
+
+on: 
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set Up Python
+        uses: action/setup-python@v2
+        with:
+          python-version: '3.9'
